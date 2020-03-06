@@ -17,6 +17,7 @@
 		9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B94F2407751A00BE955F /* ElementAttributes.m */; };
 		9F69B9532407832A00BE955F /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B9522407832A00BE955F /* ElementView.m */; };
 		9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */; };
+		9F75C94E2412631C007990BE /* MyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C94D2412631C007990BE /* MyFootView.m */; };
 		9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */; };
 		FE39BE3765374ACC01C3749E /* Pods_FlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D29E6A82F57D3F69E00BA9B /* Pods_FlowLayout.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,8 @@
 		9F69B9522407832A00BE955F /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
 		9F75C942240F5015007990BE /* SKCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9F75C94C2412631C007990BE /* MyFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFootView.h; sourceTree = "<group>"; };
+		9F75C94D2412631C007990BE /* MyFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFootView.m; sourceTree = "<group>"; };
 		9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		D9772D7144BD8AF0190FF858 /* Pods-FlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowLayout.debug.xcconfig"; path = "Target Support Files/Pods-FlowLayout/Pods-FlowLayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				9F69B935240771C400BE955F /* SceneDelegate.m */,
 				9F69B937240771C400BE955F /* ViewController.h */,
 				9F69B938240771C400BE955F /* ViewController.m */,
+				9F75C94C2412631C007990BE /* MyFootView.h */,
+				9F75C94D2412631C007990BE /* MyFootView.m */,
 				9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */,
 				9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */,
 				9F69B93A240771C400BE955F /* Main.storyboard */,
@@ -244,6 +249,7 @@
 				9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */,
 				9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */,
 				9F69B933240771C400BE955F /* AppDelegate.m in Sources */,
+				9F75C94E2412631C007990BE /* MyFootView.m in Sources */,
 				9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */,
 				9F69B944240771CA00BE955F /* main.m in Sources */,
 				9F69B936240771C400BE955F /* SceneDelegate.m in Sources */,

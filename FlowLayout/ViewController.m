@@ -6,6 +6,7 @@
 //  Copyright © 2020 ShevaKuilin. All rights reserved.
 //
 
+#import "MyFootView.h"
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
 #import "ElementAttributes.h"
@@ -74,8 +75,18 @@
 
 #pragma mark - UICollectionViewDataSource
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 3;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _dataArray.count;
+    if (section == 1) {
+        return _dataArray.count;
+    } else if (section == 2) {
+        return 10;
+    } else {
+        return 4;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,29 +96,69 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (kind == UICollectionElementKindSectionFooter) {
+        MyFootView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
+        footerview.backgroundColor = [UIColor orangeColor];
+        return footerview;
+    }
+
+    return nil;
+}
+
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击到第%ld位", (long)indexPath.row);
 }
 
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+//    return CGSizeMake(collectionView.frame.size.width, 50);
+//}
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < 2) {
-        return CGSizeMake(168.5, 75);
-    } else if (indexPath.row == 2) {
-        return CGSizeMake(109.5, 158);
-    } else if (indexPath.row > 2 && indexPath.row < 7) {
-        return CGSizeMake(109.5, 75);
-    } else if (indexPath.row == 7) {
-        return CGSizeMake(345, 75);
-    } else if (indexPath.row > 9 && indexPath.row < 13) {
-        return CGSizeMake(109.5, 75);
+    if (indexPath.section == 1) {
+        if (indexPath.row < 2) {
+            return CGSizeMake(168.5, 75);
+        } else if (indexPath.row == 2) {
+            return CGSizeMake(109.5, 158);
+        } else if (indexPath.row > 2 && indexPath.row < 7) {
+            return CGSizeMake(109.5, 75);
+        } else if (indexPath.row == 7) {
+            return CGSizeMake(345, 75);
+        } else if (indexPath.row > 9 && indexPath.row < 13) {
+            return CGSizeMake(109.5, 75);
+        } else {
+            return CGSizeMake(168.5, 75);
+        }
+    } else if (indexPath.section == 2) {
+        return CGSizeMake((self.view.frame.size.width - 62)/5, 85);
     } else {
-        return CGSizeMake(168.5, 75);
+        return CGSizeMake((self.view.frame.size.width - 56)/4, 60);
     }
 }
+
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    if (section == 0) {
+//        return 0;
+//    } else if (section == 1) {
+//        return 8;
+//    } else {
+//        return 18.5;
+//    }
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    if (section == 0) {
+//        return 30;
+//    } else if (section == 1) {
+//        return 8;
+//    } else {
+//        return 16;
+//    }
+//}
 
 #pragma mark - 懒加载
 
@@ -118,12 +169,14 @@
         layout.minimumLineSpacing = 8;
         layout.minimumInteritemSpacing = 8;
         layout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width - 30, 30);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.collectionViewLayout = layout;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"1"];
+        [_collectionView registerClass:[MyFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
     }
     return _collectionView;
 }

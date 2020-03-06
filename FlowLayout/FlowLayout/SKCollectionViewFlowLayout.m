@@ -6,6 +6,8 @@
 //  https://samwize.com/2015/11/30/understanding-uicollection-flow-layout/
 //  https://github.com/czl0325/ZLCollectionView
 //  https://www.jianshu.com/p/537c27a07581
+//  https://www.jianshu.com/p/7baacb65ae9b
+//  https://stackoverflow.com/questions/53605022/changing-uicollectionview-layout-depending-on-section
 //
 //  Created by ShevaKuilin on 2020/3/4.
 //  Copyright © 2020 ShevaKuilin. All rights reserved.
@@ -15,7 +17,8 @@
 
 @interface SKCollectionViewFlowLayout()
 
-@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *layoutAttributes;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<UICollectionViewLayoutAttributes *> *> *allLayoutAttributes;
+@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *itemLayoutAttributes;
 @property (nonatomic, strong) NSMutableArray *framePool;
 @property (nonatomic, assign) CGSize contentSize;
 
@@ -45,15 +48,22 @@
     [super prepareLayout];
     // collectionView 的实际大小
     _contentSize = CGSizeZero;
-    // 目前只考虑单个 section 的实现
-    // 获取 item 数量
-    NSInteger itemCount = [self.collectionView numberOfItemsInSection:0];
     // 清除旧布局
-    [self.layoutAttributes removeAllObjects];
-    for (NSInteger i = 0; i < itemCount; i++) {
-        // 计算布局属性
-        UICollectionViewLayoutAttributes *theAttributes = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        [self.layoutAttributes addObject:theAttributes];
+    [self.allLayoutAttributes removeAllObjects];
+    [self.itemLayoutAttributes removeAllObjects];
+    // 获取 section 数量
+    NSInteger section = [self.collectionView numberOfSections];
+    for (NSInteger j = 0; j < section; j++) {
+        // 获取每个 section 下 item 的数量
+        NSInteger itemCount = [self.collectionView numberOfItemsInSection:j];
+//        NSMutableArray *tempAttributes = [NSMutableArray array];
+        for (NSInteger i = 0; i < itemCount; i++) {
+            // 计算布局属性
+            UICollectionViewLayoutAttributes *theAttributes = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]];
+            [self.itemLayoutAttributes addObject:theAttributes];
+        }
+        // 添加每个 section 的布局
+        [self.allLayoutAttributes addObject:self.itemLayoutAttributes];
     }
 }
 
@@ -79,14 +89,16 @@
         x = self.sectionInset.left;
         y = self.sectionInset.top;
         // 判断是否为前一个 item
-        if (self.layoutAttributes.count > 0) {
+        if (self.itemLayoutAttributes.count > 0) {
             // 从 layoutAttributes 中获取上一个 item 如果获取不到，设置现在的 item 为第一个 item
-            UICollectionViewLayoutAttributes *lastLayoutAttributes = self.layoutAttributes.lastObject;
+            UICollectionViewLayoutAttributes *lastLayoutAttributes = self.itemLayoutAttributes.lastObject;
             if (CGRectGetMaxX(lastLayoutAttributes.frame) + self.minimumInteritemSpacing + size.width + self.sectionInset.right > collectionViewWidth) {
                 // 如果宽度总和超过总宽度, 改变 y 坐标, 当前的 item 在下一行显示
                 y = CGRectGetMaxY(lastLayoutAttributes.frame) + self.minimumLineSpacing;
-                // 碰撞检测
-                x = CGRectGetMinX([self itemCollisionDetectionWithCurrentFrame:CGRectMake(x, y, size.width, size.height)]);
+                if (indexPath.section == 1) {
+                    // 碰撞检测
+                    x = CGRectGetMinX([self itemCollisionDetectionWithCurrentFrame:CGRectMake(x, y, size.width, size.height)]);                    
+                }
             } else {
                 // 如果宽度可以插入 item, 修改坐标点, y 轴与上一个 item 平齐, x 轴则为上一个 item 的最右边加上行间距
                 x = CGRectGetMaxX(lastLayoutAttributes.frame) + self.minimumInteritemSpacing;
@@ -114,7 +126,7 @@
 
 // 重载返回所有布局
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-    return self.layoutAttributes;
+    return self.itemLayoutAttributes;
 }
 
 // item 碰撞检测 [判断 x 是否重叠]
@@ -136,11 +148,18 @@
     }
 }
 
-- (NSMutableArray<UICollectionViewLayoutAttributes *> *)layoutAttributes {
-    if (!_layoutAttributes) {
-        _layoutAttributes = [NSMutableArray array];
+- (NSMutableArray<NSMutableArray<UICollectionViewLayoutAttributes *> *> *)allLayoutAttributes {
+    if (!_allLayoutAttributes) {
+        _allLayoutAttributes = [NSMutableArray array];
     }
-    return _layoutAttributes;
+    return _allLayoutAttributes;
+}
+
+- (NSMutableArray<UICollectionViewLayoutAttributes *> *)itemLayoutAttributes {
+    if (!_itemLayoutAttributes) {
+        _itemLayoutAttributes = [NSMutableArray array];
+    }
+    return _itemLayoutAttributes;
 }
 
 - (NSMutableArray *)framePool {
