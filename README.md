@@ -3,4 +3,4 @@
 
 ## 效果图
 
-![效果图](/Users/xiangkuilin/Desktop/FlowLayout/Images/效果图.jpg)
+![效果图](./Images/效果图.jpg)
