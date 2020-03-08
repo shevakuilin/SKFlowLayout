@@ -68,7 +68,7 @@
 // 重载布局属性
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     // 设置 insert
-    if (indexPath.section == 2) {
+    if (indexPath.section == 2 || indexPath.section == 4) {
         self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         self.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
@@ -99,7 +99,7 @@
             if (CGRectGetMaxX(lastLayoutAttributes.frame) + self.minimumInteritemSpacing + size.width + self.sectionInset.right > collectionViewWidth) {
                 // 如果宽度总和超过总宽度, 改变 y 坐标, 当前的 item 在下一行显示
                 y = CGRectGetMaxY(lastLayoutAttributes.frame) + self.minimumLineSpacing;
-                if (indexPath.section == 4) {
+                if (indexPath.section == 5) {
                     // 碰撞检测
                     x = CGRectGetMinX([self itemCollisionDetectionWithCurrentFrame:CGRectMake(x, y, size.width, size.height)]);                    
                 }

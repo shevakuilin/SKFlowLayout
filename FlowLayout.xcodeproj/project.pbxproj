@@ -26,6 +26,7 @@
 		9F75C9CC24151BEB007990BE /* IEThreadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C97B24151BEA007990BE /* IEThreadTool.m */; };
 		9F75C9F124151C74007990BE /* IEBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F024151C74007990BE /* IEBanner.m */; };
 		9F75C9F424152A6B007990BE /* MyBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F324152A6B007990BE /* MyBannerView.m */; };
+		9F75C9F724153D9F007990BE /* MyMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F624153D9F007990BE /* MyMessageView.m */; };
 		9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */; };
 		FE39BE3765374ACC01C3749E /* Pods_FlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D29E6A82F57D3F69E00BA9B /* Pods_FlowLayout.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		9F75C9F024151C74007990BE /* IEBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEBanner.m; sourceTree = "<group>"; };
 		9F75C9F224152A6B007990BE /* MyBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBannerView.h; sourceTree = "<group>"; };
 		9F75C9F324152A6B007990BE /* MyBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBannerView.m; sourceTree = "<group>"; };
+		9F75C9F524153D9F007990BE /* MyMessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageView.h; sourceTree = "<group>"; };
+		9F75C9F624153D9F007990BE /* MyMessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessageView.m; sourceTree = "<group>"; };
 		9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		D9772D7144BD8AF0190FF858 /* Pods-FlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowLayout.debug.xcconfig"; path = "Target Support Files/Pods-FlowLayout/Pods-FlowLayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				9F75C9F024151C74007990BE /* IEBanner.m */,
 				9F75C9F224152A6B007990BE /* MyBannerView.h */,
 				9F75C9F324152A6B007990BE /* MyBannerView.m */,
+				9F75C9F524153D9F007990BE /* MyMessageView.h */,
+				9F75C9F624153D9F007990BE /* MyMessageView.m */,
 				9F69B93A240771C400BE955F /* Main.storyboard */,
 				9F69B93D240771CA00BE955F /* Assets.xcassets */,
 				9F69B93F240771CA00BE955F /* LaunchScreen.storyboard */,
@@ -319,6 +324,7 @@
 				9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */,
 				9F69B944240771CA00BE955F /* main.m in Sources */,
 				9F75C954241279A9007990BE /* MyHeaderView.m in Sources */,
+				9F75C9F724153D9F007990BE /* MyMessageView.m in Sources */,
 				9F69B936240771C400BE955F /* SceneDelegate.m in Sources */,
 				9F75C9F124151C74007990BE /* IEBanner.m in Sources */,
 				9F69B9532407832A00BE955F /* ElementView.m in Sources */,

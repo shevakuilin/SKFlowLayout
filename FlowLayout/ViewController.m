@@ -9,6 +9,7 @@
 #import "MySearchBar.h"
 #import "MyHeaderView.h"
 #import "MyBannerView.h"
+#import "MyMessageView.h"
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
 #import "ElementAttributes.h"
@@ -78,11 +79,11 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0 || section == 2) {
+    if (section == 0 || section == 2 || section == 4) {
         return 1;
     } else if (section == 1) {
         return 4;
@@ -99,6 +100,9 @@
         return cell;
     } else if (indexPath.section == 2) {
         MyBannerView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"2" forIndexPath:indexPath];
+        return cell;
+    } else if (indexPath.section == 4) {
+        MyMessageView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"3" forIndexPath:indexPath];
         return cell;
     } else {
         MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"1" forIndexPath:indexPath];
@@ -140,6 +144,8 @@
         return CGSizeMake(self.view.frame.size.width, 140.5);
     } else if (section == 3) {
         return CGSizeMake((self.view.frame.size.width - 62)/5, 85);
+    } else if (section == 4) {
+        return CGSizeMake(self.view.frame.size.width, 60);
     } else {
         if (indexPath.row < 2) {
             return CGSizeMake(168.5, 75);
@@ -195,6 +201,7 @@
         [_collectionView registerClass:[MySearchBar class] forCellWithReuseIdentifier:@"0"];
         [_collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"1"];
         [_collectionView registerClass:[MyBannerView class] forCellWithReuseIdentifier:@"2"];
+        [_collectionView registerClass:[MyMessageView class] forCellWithReuseIdentifier:@"3"];
         [_collectionView registerClass:[MyHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     }
     return _collectionView;
