@@ -1,5 +1,5 @@
 //
-//  MyFootView.h
+//  MyHeaderView.h
 //  FlowLayout
 //
 //  Created by ShevaKuilin on 2020/3/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyFootView : UICollectionReusableView
+@interface MyHeaderView : UICollectionReusableView
 
 @end
 

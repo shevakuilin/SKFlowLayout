@@ -1,13 +1,13 @@
 //
-//  MyFootView.m
+//  MyHeaderView.m
 //  FlowLayout
 //
 //  Created by ShevaKuilin on 2020/3/6.
 //  Copyright © 2020 ShevaKuilin. All rights reserved.
 //
 
-#import "MyFootView.h"
+#import "MyHeaderView.h"
 
-@implementation MyFootView
+@implementation MyHeaderView
 
 @end

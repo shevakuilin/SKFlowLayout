@@ -17,7 +17,15 @@
 		9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B94F2407751A00BE955F /* ElementAttributes.m */; };
 		9F69B9532407832A00BE955F /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B9522407832A00BE955F /* ElementView.m */; };
 		9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */; };
-		9F75C94E2412631C007990BE /* MyFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C94D2412631C007990BE /* MyFootView.m */; };
+		9F75C954241279A9007990BE /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C953241279A9007990BE /* MyHeaderView.m */; };
+		9F75C957241512F4007990BE /* MySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C956241512F4007990BE /* MySearchBar.m */; };
+		9F75C96124151813007990BE /* IEHomeBannerScrollProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C95C24151813007990BE /* IEHomeBannerScrollProgressView.m */; };
+		9F75C96224151813007990BE /* IEHomeBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C95D24151813007990BE /* IEHomeBannerCollectionViewCell.m */; };
+		9F75C96324151813007990BE /* IEHomeCenterBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C95E24151813007990BE /* IEHomeCenterBannerView.m */; };
+		9F75C96424151813007990BE /* IEHomeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C95F24151813007990BE /* IEHomeBannerView.m */; };
+		9F75C9CC24151BEB007990BE /* IEThreadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C97B24151BEA007990BE /* IEThreadTool.m */; };
+		9F75C9F124151C74007990BE /* IEBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F024151C74007990BE /* IEBanner.m */; };
+		9F75C9F424152A6B007990BE /* MyBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F324152A6B007990BE /* MyBannerView.m */; };
 		9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */; };
 		FE39BE3765374ACC01C3749E /* Pods_FlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D29E6A82F57D3F69E00BA9B /* Pods_FlowLayout.framework */; };
 /* End PBXBuildFile section */
@@ -43,8 +51,25 @@
 		9F69B9522407832A00BE955F /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
 		9F75C942240F5015007990BE /* SKCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		9F75C94C2412631C007990BE /* MyFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFootView.h; sourceTree = "<group>"; };
-		9F75C94D2412631C007990BE /* MyFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFootView.m; sourceTree = "<group>"; };
+		9F75C952241279A9007990BE /* MyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
+		9F75C953241279A9007990BE /* MyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
+		9F75C955241512F4007990BE /* MySearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySearchBar.h; sourceTree = "<group>"; };
+		9F75C956241512F4007990BE /* MySearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySearchBar.m; sourceTree = "<group>"; };
+		9F75C95924151813007990BE /* IEHomeBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEHomeBannerView.h; sourceTree = "<group>"; };
+		9F75C95A24151813007990BE /* IEHomeCenterBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEHomeCenterBannerView.h; sourceTree = "<group>"; };
+		9F75C95B24151813007990BE /* IEHomeBannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEHomeBannerCollectionViewCell.h; sourceTree = "<group>"; };
+		9F75C95C24151813007990BE /* IEHomeBannerScrollProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEHomeBannerScrollProgressView.m; sourceTree = "<group>"; };
+		9F75C95D24151813007990BE /* IEHomeBannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEHomeBannerCollectionViewCell.m; sourceTree = "<group>"; };
+		9F75C95E24151813007990BE /* IEHomeCenterBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEHomeCenterBannerView.m; sourceTree = "<group>"; };
+		9F75C95F24151813007990BE /* IEHomeBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEHomeBannerView.m; sourceTree = "<group>"; };
+		9F75C96024151813007990BE /* IEHomeBannerScrollProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEHomeBannerScrollProgressView.h; sourceTree = "<group>"; };
+		9F75C96524151ABD007990BE /* Global.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.pch; sourceTree = "<group>"; };
+		9F75C96724151BEA007990BE /* IEThreadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEThreadTool.h; sourceTree = "<group>"; };
+		9F75C97B24151BEA007990BE /* IEThreadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEThreadTool.m; sourceTree = "<group>"; };
+		9F75C9EF24151C74007990BE /* IEBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEBanner.h; sourceTree = "<group>"; };
+		9F75C9F024151C74007990BE /* IEBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEBanner.m; sourceTree = "<group>"; };
+		9F75C9F224152A6B007990BE /* MyBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBannerView.h; sourceTree = "<group>"; };
+		9F75C9F324152A6B007990BE /* MyBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBannerView.m; sourceTree = "<group>"; };
 		9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		D9772D7144BD8AF0190FF858 /* Pods-FlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowLayout.debug.xcconfig"; path = "Target Support Files/Pods-FlowLayout/Pods-FlowLayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +125,9 @@
 		9F69B930240771C400BE955F /* FlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				9F75C98924151BEB007990BE /* Category */,
+				9F75C96624151BEA007990BE /* Tools */,
+				9F75C95824151813007990BE /* Banner */,
 				9F69B94A240774B900BE955F /* FlowLayout */,
 				9F69B931240771C400BE955F /* AppDelegate.h */,
 				9F69B932240771C400BE955F /* AppDelegate.m */,
@@ -107,15 +135,22 @@
 				9F69B935240771C400BE955F /* SceneDelegate.m */,
 				9F69B937240771C400BE955F /* ViewController.h */,
 				9F69B938240771C400BE955F /* ViewController.m */,
-				9F75C94C2412631C007990BE /* MyFootView.h */,
-				9F75C94D2412631C007990BE /* MyFootView.m */,
+				9F75C952241279A9007990BE /* MyHeaderView.h */,
+				9F75C953241279A9007990BE /* MyHeaderView.m */,
 				9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */,
 				9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */,
+				9F75C955241512F4007990BE /* MySearchBar.h */,
+				9F75C956241512F4007990BE /* MySearchBar.m */,
+				9F75C9EF24151C74007990BE /* IEBanner.h */,
+				9F75C9F024151C74007990BE /* IEBanner.m */,
+				9F75C9F224152A6B007990BE /* MyBannerView.h */,
+				9F75C9F324152A6B007990BE /* MyBannerView.m */,
 				9F69B93A240771C400BE955F /* Main.storyboard */,
 				9F69B93D240771CA00BE955F /* Assets.xcassets */,
 				9F69B93F240771CA00BE955F /* LaunchScreen.storyboard */,
 				9F69B942240771CA00BE955F /* Info.plist */,
 				9F69B943240771CA00BE955F /* main.m */,
+				9F75C96524151ABD007990BE /* Global.pch */,
 			);
 			path = FlowLayout;
 			sourceTree = "<group>";
@@ -131,6 +166,37 @@
 				9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */,
 			);
 			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		9F75C95824151813007990BE /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				9F75C95924151813007990BE /* IEHomeBannerView.h */,
+				9F75C95F24151813007990BE /* IEHomeBannerView.m */,
+				9F75C95A24151813007990BE /* IEHomeCenterBannerView.h */,
+				9F75C95E24151813007990BE /* IEHomeCenterBannerView.m */,
+				9F75C95B24151813007990BE /* IEHomeBannerCollectionViewCell.h */,
+				9F75C95D24151813007990BE /* IEHomeBannerCollectionViewCell.m */,
+				9F75C96024151813007990BE /* IEHomeBannerScrollProgressView.h */,
+				9F75C95C24151813007990BE /* IEHomeBannerScrollProgressView.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		9F75C96624151BEA007990BE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9F75C96724151BEA007990BE /* IEThreadTool.h */,
+				9F75C97B24151BEA007990BE /* IEThreadTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		9F75C98924151BEB007990BE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,13 +313,21 @@
 			files = (
 				9F69B939240771C400BE955F /* ViewController.m in Sources */,
 				9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */,
+				9F75C96324151813007990BE /* IEHomeCenterBannerView.m in Sources */,
 				9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */,
 				9F69B933240771C400BE955F /* AppDelegate.m in Sources */,
-				9F75C94E2412631C007990BE /* MyFootView.m in Sources */,
 				9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */,
 				9F69B944240771CA00BE955F /* main.m in Sources */,
+				9F75C954241279A9007990BE /* MyHeaderView.m in Sources */,
 				9F69B936240771C400BE955F /* SceneDelegate.m in Sources */,
+				9F75C9F124151C74007990BE /* IEBanner.m in Sources */,
 				9F69B9532407832A00BE955F /* ElementView.m in Sources */,
+				9F75C96124151813007990BE /* IEHomeBannerScrollProgressView.m in Sources */,
+				9F75C9F424152A6B007990BE /* MyBannerView.m in Sources */,
+				9F75C96224151813007990BE /* IEHomeBannerCollectionViewCell.m in Sources */,
+				9F75C957241512F4007990BE /* MySearchBar.m in Sources */,
+				9F75C9CC24151BEB007990BE /* IEThreadTool.m in Sources */,
+				9F75C96424151813007990BE /* IEHomeBannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,8 +469,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FlowLayout/Global.pch";
 				INFOPLIST_FILE = FlowLayout/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,8 +488,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FlowLayout/Global.pch";
 				INFOPLIST_FILE = FlowLayout/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

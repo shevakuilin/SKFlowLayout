@@ -56,19 +56,23 @@
     for (NSInteger j = 0; j < section; j++) {
         // 获取每个 section 下 item 的数量
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:j];
-//        NSMutableArray *tempAttributes = [NSMutableArray array];
         for (NSInteger i = 0; i < itemCount; i++) {
             // 计算布局属性
             UICollectionViewLayoutAttributes *theAttributes = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]];
             [self.itemLayoutAttributes addObject:theAttributes];
         }
-        // 添加每个 section 的布局
         [self.allLayoutAttributes addObject:self.itemLayoutAttributes];
     }
 }
 
 // 重载布局属性
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+    // 设置 insert
+    if (indexPath.section == 2) {
+        self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    } else {
+        self.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    }
     // size 默认为 itemSize
     CGSize size = self.itemSize;
     // 从代理方法获取 item 的 size
@@ -95,7 +99,7 @@
             if (CGRectGetMaxX(lastLayoutAttributes.frame) + self.minimumInteritemSpacing + size.width + self.sectionInset.right > collectionViewWidth) {
                 // 如果宽度总和超过总宽度, 改变 y 坐标, 当前的 item 在下一行显示
                 y = CGRectGetMaxY(lastLayoutAttributes.frame) + self.minimumLineSpacing;
-                if (indexPath.section == 1) {
+                if (indexPath.section == 4) {
                     // 碰撞检测
                     x = CGRectGetMinX([self itemCollisionDetectionWithCurrentFrame:CGRectMake(x, y, size.width, size.height)]);                    
                 }
@@ -111,6 +115,11 @@
         x = attributes.frame.origin.x;
         y = attributes.frame.origin.y;
     }
+    // 判断是否存在 header 视图
+//    if (!CGSizeEqualToSize(CGSizeZero, self.headerReferenceSize) && indexPath.row == 0) {
+//        // 更新第一个 Item 的起始 y 坐标
+//        y += self.headerReferenceSize.height;
+//    }
     frame = CGRectMake(x, y, size.width, size.height);
     // 加入 frame 池中，等待碰撞检测
     [self.framePool addObject:[NSValue valueWithCGRect:frame]];

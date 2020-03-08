@@ -6,7 +6,9 @@
 //  Copyright © 2020 ShevaKuilin. All rights reserved.
 //
 
-#import "MyFootView.h"
+#import "MySearchBar.h"
+#import "MyHeaderView.h"
+#import "MyBannerView.h"
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
 #import "ElementAttributes.h"
@@ -76,35 +78,45 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 3;
+    return 5;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 1) {
-        return _dataArray.count;
-    } else if (section == 2) {
+    if (section == 0 || section == 2) {
+        return 1;
+    } else if (section == 1) {
+        return 4;
+    } else if (section == 3) {
         return 10;
     } else {
-        return 4;
+        return _dataArray.count;
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"1" forIndexPath:indexPath];
-    cell.attributes = [_dataArray objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    if (kind == UICollectionElementKindSectionFooter) {
-        MyFootView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
-        footerview.backgroundColor = [UIColor orangeColor];
-        return footerview;
+    if (indexPath.section == 0) {
+        MySearchBar *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"0" forIndexPath:indexPath];
+        return cell;
+    } else if (indexPath.section == 2) {
+        MyBannerView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"2" forIndexPath:indexPath];
+        return cell;
+    } else {
+        MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"1" forIndexPath:indexPath];
+        cell.attributes = [_dataArray objectAtIndex:indexPath.row];
+        
+        return cell;
     }
-
-    return nil;
 }
+
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    if (kind == UICollectionElementKindSectionHeader) {
+//        MyHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+//        headerView.backgroundColor = [UIColor orangeColor];
+//        return headerView;
+//    }
+//
+//    return nil;
+//}
 
 #pragma mark - UICollectionViewDelegate
 
@@ -119,7 +131,16 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    NSInteger section = indexPath.section;
+    if (section == 0) {
+        return CGSizeMake(self.view.frame.size.width - 30, 63);
+    } else if (section == 1) {
+        return CGSizeMake((self.view.frame.size.width - 56)/4, 60);
+    } else if (section == 2) {
+        return CGSizeMake(self.view.frame.size.width, 140.5);
+    } else if (section == 3) {
+        return CGSizeMake((self.view.frame.size.width - 62)/5, 85);
+    } else {
         if (indexPath.row < 2) {
             return CGSizeMake(168.5, 75);
         } else if (indexPath.row == 2) {
@@ -133,10 +154,6 @@
         } else {
             return CGSizeMake(168.5, 75);
         }
-    } else if (indexPath.section == 2) {
-        return CGSizeMake((self.view.frame.size.width - 62)/5, 85);
-    } else {
-        return CGSizeMake((self.view.frame.size.width - 56)/4, 60);
     }
 }
 
@@ -169,14 +186,16 @@
         layout.minimumLineSpacing = 8;
         layout.minimumInteritemSpacing = 8;
         layout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
-        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width - 30, 30);
+        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width - 30, 30);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.collectionViewLayout = layout;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor whiteColor];
+        [_collectionView registerClass:[MySearchBar class] forCellWithReuseIdentifier:@"0"];
         [_collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"1"];
-        [_collectionView registerClass:[MyFootView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
+        [_collectionView registerClass:[MyBannerView class] forCellWithReuseIdentifier:@"2"];
+        [_collectionView registerClass:[MyHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     }
     return _collectionView;
 }
