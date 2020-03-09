@@ -19,13 +19,21 @@
 
 @implementation MyCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.elementView = [[ElementView alloc] initWithFrame:CGRectZero];
+        [self addSubview:_elementView];
+        [self.elementView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+    }
+    return self;
+}
+
 - (void)setAttributes:(ElementAttributes *)attributes {
     _attributes = attributes;
-    self.elementView = [[ElementView alloc] initWithAttributes:attributes];
-    [self addSubview:_elementView];
-    [self.elementView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
+    self.elementView.attributes = attributes;
 }
 
 

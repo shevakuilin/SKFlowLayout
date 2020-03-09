@@ -8,6 +8,7 @@
 //  https://www.jianshu.com/p/537c27a07581
 //  https://www.jianshu.com/p/7baacb65ae9b
 //  https://stackoverflow.com/questions/53605022/changing-uicollectionview-layout-depending-on-section
+//  https://github.com/sgr-ksmt/WaterfallLayout
 //
 //  Created by ShevaKuilin on 2020/3/4.
 //  Copyright © 2020 ShevaKuilin. All rights reserved.

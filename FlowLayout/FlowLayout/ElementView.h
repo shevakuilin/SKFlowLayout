@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ElementView : UIView
 
-- (instancetype)initWithAttributes:(ElementAttributes *)attributes;
+@property (nonatomic, strong) ElementAttributes *attributes;
 
 @end
 
