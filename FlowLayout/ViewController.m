@@ -112,15 +112,14 @@
     }
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//    if (kind == UICollectionElementKindSectionHeader) {
-//        MyHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-//        headerView.backgroundColor = [UIColor orangeColor];
-//        return headerView;
-//    }
-//
-//    return nil;
-//}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (kind == UICollectionElementKindSectionHeader) {
+        MyHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        return headerView;
+    }
+
+    return nil;
+}
 
 #pragma mark - UICollectionViewDelegate
 
@@ -192,7 +191,7 @@
         layout.minimumLineSpacing = 8;
         layout.minimumInteritemSpacing = 8;
         layout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
-        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width - 30, 30);
+        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 44);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.collectionViewLayout = layout;
         _collectionView.delegate = self;

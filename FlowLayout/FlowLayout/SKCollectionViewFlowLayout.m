@@ -116,10 +116,14 @@
         y = attributes.frame.origin.y;
     }
     // 判断是否存在 header 视图
-//    if (!CGSizeEqualToSize(CGSizeZero, self.headerReferenceSize) && indexPath.row == 0) {
-//        // 更新第一个 Item 的起始 y 坐标
-//        y += self.headerReferenceSize.height;
-//    }
+    if (!CGSizeEqualToSize(CGSizeZero, self.headerReferenceSize) && indexPath.row == 0 && indexPath.section == 5) {
+        // 添加 header
+        UICollectionViewLayoutAttributes * layoutHeader = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathWithIndex:0]];
+        layoutHeader.frame = CGRectMake(0, y - self.minimumInteritemSpacing, [UIScreen mainScreen].bounds.size.width, 44);
+        [self.itemLayoutAttributes addObject:layoutHeader];
+        // 更新第一个 Item 的起始 y 坐标
+        y += self.headerReferenceSize.height;
+    }
     frame = CGRectMake(x, y, size.width, size.height);
     // 加入 frame 池中，等待碰撞检测
     [self.framePool addObject:[NSValue valueWithCGRect:frame]];
