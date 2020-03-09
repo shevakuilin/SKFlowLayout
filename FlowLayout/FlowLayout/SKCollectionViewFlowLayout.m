@@ -69,7 +69,7 @@
 // 重载布局属性
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     // 设置 insert
-    if (indexPath.section == 2 || indexPath.section == 4) {
+    if (indexPath.section == 2 || indexPath.section == 4 || indexPath.section == 6) {
         self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         self.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
@@ -117,13 +117,20 @@
         y = attributes.frame.origin.y;
     }
     // 判断是否存在 header 视图
-    if (!CGSizeEqualToSize(CGSizeZero, self.headerReferenceSize) && indexPath.row == 0 && indexPath.section == 5) {
+    if (!CGSizeEqualToSize(CGSizeZero, self.headerReferenceSize) && indexPath.row == 0 && (indexPath.section == 5 || indexPath.section == 6)) {
         // 添加 header
-        UICollectionViewLayoutAttributes * layoutHeader = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathWithIndex:0]];
-        layoutHeader.frame = CGRectMake(0, y - self.minimumInteritemSpacing, [UIScreen mainScreen].bounds.size.width, 44);
-        [self.itemLayoutAttributes addObject:layoutHeader];
-        // 更新第一个 Item 的起始 y 坐标
-        y += self.headerReferenceSize.height;
+        UICollectionViewLayoutAttributes *layoutHeader = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.section]];
+        if (indexPath.section == 5) {
+            layoutHeader.frame = CGRectMake(0, y - self.minimumInteritemSpacing, [UIScreen mainScreen].bounds.size.width, 44);
+            [self.itemLayoutAttributes addObject:layoutHeader];
+            // 更新第一个 Item 的起始 y 坐标
+            y += self.headerReferenceSize.height;
+        } else if (indexPath.section == 6) {
+            layoutHeader.frame = CGRectMake(0, y - self.minimumInteritemSpacing + 15, [UIScreen mainScreen].bounds.size.width, 52);
+            [self.itemLayoutAttributes addObject:layoutHeader];
+            // 更新第一个 Item 的起始 y 坐标
+            y += self.headerReferenceSize.height + 15;
+        }
     }
     frame = CGRectMake(x, y, size.width, size.height);
     // 加入 frame 池中，等待碰撞检测

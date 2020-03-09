@@ -135,26 +135,13 @@
 				9F75C96624151BEA007990BE /* Tools */,
 				9F75C95824151813007990BE /* Banner */,
 				9F69B94A240774B900BE955F /* FlowLayout */,
+				9F75C9FB24163183007990BE /* SubModule */,
 				9F69B931240771C400BE955F /* AppDelegate.h */,
 				9F69B932240771C400BE955F /* AppDelegate.m */,
 				9F69B934240771C400BE955F /* SceneDelegate.h */,
 				9F69B935240771C400BE955F /* SceneDelegate.m */,
 				9F69B937240771C400BE955F /* ViewController.h */,
 				9F69B938240771C400BE955F /* ViewController.m */,
-				9F75C952241279A9007990BE /* MyHeaderView.h */,
-				9F75C953241279A9007990BE /* MyHeaderView.m */,
-				9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */,
-				9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */,
-				9F75C955241512F4007990BE /* MySearchBar.h */,
-				9F75C956241512F4007990BE /* MySearchBar.m */,
-				9F75C9EF24151C74007990BE /* IEBanner.h */,
-				9F75C9F024151C74007990BE /* IEBanner.m */,
-				9F75C9F224152A6B007990BE /* MyBannerView.h */,
-				9F75C9F324152A6B007990BE /* MyBannerView.m */,
-				9F75C9F524153D9F007990BE /* MyMessageView.h */,
-				9F75C9F624153D9F007990BE /* MyMessageView.m */,
-				9F75C9F82415F0CA007990BE /* MyMultistageView.h */,
-				9F75C9F92415F0CA007990BE /* MyMultistageView.m */,
 				9F69B93A240771C400BE955F /* Main.storyboard */,
 				9F69B93D240771CA00BE955F /* Assets.xcassets */,
 				9F69B93F240771CA00BE955F /* LaunchScreen.storyboard */,
@@ -207,6 +194,27 @@
 			children = (
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		9F75C9FB24163183007990BE /* SubModule */ = {
+			isa = PBXGroup;
+			children = (
+				9F75C952241279A9007990BE /* MyHeaderView.h */,
+				9F75C953241279A9007990BE /* MyHeaderView.m */,
+				9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */,
+				9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */,
+				9F75C955241512F4007990BE /* MySearchBar.h */,
+				9F75C956241512F4007990BE /* MySearchBar.m */,
+				9F75C9EF24151C74007990BE /* IEBanner.h */,
+				9F75C9F024151C74007990BE /* IEBanner.m */,
+				9F75C9F224152A6B007990BE /* MyBannerView.h */,
+				9F75C9F324152A6B007990BE /* MyBannerView.m */,
+				9F75C9F524153D9F007990BE /* MyMessageView.h */,
+				9F75C9F624153D9F007990BE /* MyMessageView.m */,
+				9F75C9F82415F0CA007990BE /* MyMultistageView.h */,
+				9F75C9F92415F0CA007990BE /* MyMultistageView.m */,
+			);
+			path = SubModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

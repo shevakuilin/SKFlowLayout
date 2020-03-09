@@ -12,6 +12,7 @@
 #import "MyMessageView.h"
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
+#import "MyMultistageView.h"
 #import "ElementAttributes.h"
 #import "MyCollectionViewCell.h"
 #import "SKCollectionViewFlowLayout.h"
@@ -79,7 +80,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -89,6 +90,8 @@
         return 4;
     } else if (section == 3) {
         return 10;
+    } else if (section == 6){
+        return 1;
     } else {
         return _dataArray.count;
     }
@@ -104,6 +107,9 @@
     } else if (indexPath.section == 4) {
         MyMessageView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"3" forIndexPath:indexPath];
         return cell;
+    } else if (indexPath.section == 6){
+        MyMultistageView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"4" forIndexPath:indexPath];
+        return cell;
     } else {
         MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"1" forIndexPath:indexPath];
         cell.attributes = [_dataArray objectAtIndex:indexPath.row];
@@ -115,6 +121,9 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (kind == UICollectionElementKindSectionHeader) {
         MyHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+        if (indexPath.section == 6) {
+            headerView.title = @"会议日程";
+        }
         return headerView;
     }
 
@@ -145,6 +154,8 @@
         return CGSizeMake((self.view.frame.size.width - 62)/5, 85);
     } else if (section == 4) {
         return CGSizeMake(self.view.frame.size.width, 60);
+    } else if (section == 6) {
+        return CGSizeMake(self.view.frame.size.width, 176);
     } else {
         if (indexPath.row < 2) {
             return CGSizeMake(168.5, 75);
@@ -201,6 +212,7 @@
         [_collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"1"];
         [_collectionView registerClass:[MyBannerView class] forCellWithReuseIdentifier:@"2"];
         [_collectionView registerClass:[MyMessageView class] forCellWithReuseIdentifier:@"3"];
+        [_collectionView registerClass:[MyMultistageView class] forCellWithReuseIdentifier:@"4"];
         [_collectionView registerClass:[MyHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     }
     return _collectionView;
