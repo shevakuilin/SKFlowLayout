@@ -49,4 +49,6 @@
     #endif
 #endif
 
+#import <Masonry.h>
+
 #endif /* Global_pch */
