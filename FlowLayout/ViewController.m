@@ -94,7 +94,14 @@
             self.lastSectionHeight = self.lastSectionHeight - height;
         }
         NSLog(@"section高度 = %.2f", self.lastSectionHeight);
-        [self.collectionView reloadData];
+        // 参考：https://stackoverflow.com/questions/13272315/uicollectionview-animate-data-change
+        [self.collectionView performBatchUpdates:^{
+            [self.collectionView reloadData];
+        } completion:^(BOOL finished) {
+            // do something on completion
+            NSLog(@"点击位置 = %ld", (long)index);
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:6] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:true];
+        }];
     }
 }
 
