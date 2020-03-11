@@ -14,8 +14,6 @@
 #import "ConferenceCell.h"
 #import "MultiLevelTableView.h"
 
-static CGFloat const cellHeight = 45.0;
-
 @interface MultiLevelTableView()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, copy) NSString *rootID;
@@ -138,9 +136,9 @@ static CGFloat const cellHeight = 45.0;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NodeModel *node = [_tempNodes objectAtIndex:indexPath.row];
-    if (node.parentID.length == 0) {
+    if (node.level == 1) {
         return 44;
-    } else if (node.parentID.length == 1) {
+    } else if (node.level == 2) {
         return 32;
     }
     return 178;
@@ -149,7 +147,7 @@ static CGFloat const cellHeight = 45.0;
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
     NodeModel *node = [_tempNodes objectAtIndex:indexPath.row];
-    if (node.parentID.length == 0) {
+    if (node.level == 1) {
         CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
             cell = [[CategoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
@@ -159,7 +157,7 @@ static CGFloat const cellHeight = 45.0;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
-    } else if (node.parentID.length == 1) {
+    } else if (node.level == 2) {
         DateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"date"];
         if (!cell) {
             cell = [[DateCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"date"];
@@ -180,6 +178,8 @@ static CGFloat const cellHeight = 45.0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NodeModel *currentNode = [_tempNodes objectAtIndex:indexPath.row];
+    // - Note: 通知 collectionView 更新 section 高度
+    NSLog(@"点到了%@", currentNode.name);
     if (currentNode.isLeaf) {
         self.block(currentNode);
         return;
@@ -198,7 +198,6 @@ static CGFloat const cellHeight = 45.0;
         [self foldNodesForLevel:currentNode.level currentIndex:indexPath.row];
          [tableView deleteRowsAtIndexPaths:_reloadArray withRowAnimation:UITableViewRowAnimationNone];
     }
-    // - Note: 通知 collectionView 更新 section 高度
 }
 
 #pragma mark
