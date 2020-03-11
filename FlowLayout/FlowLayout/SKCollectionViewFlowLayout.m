@@ -52,6 +52,7 @@
     // 清除旧布局
     [self.allLayoutAttributes removeAllObjects];
     [self.itemLayoutAttributes removeAllObjects];
+    [self.framePool removeAllObjects];
     // 获取 section 数量
     NSInteger section = [self.collectionView numberOfSections];
     for (NSInteger j = 0; j < section; j++) {
