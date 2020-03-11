@@ -179,6 +179,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NodeModel *currentNode = [_tempNodes objectAtIndex:indexPath.row];
     // - Note: 通知 collectionView 更新 section 高度
+    if (currentNode.level == 1) {
+        // 查询该节点下的子节点数量 * 32
+        NSInteger nodeCount = 0;
+        for (NodeModel *node in _nodes) {
+            if ([node.parentID isEqualToString:currentNode.childrenID]) {
+                nodeCount++;
+            }
+        }
+        // 发送通知，更新高度
+        // 改级下第二集总高度（展开状态）
+        if (currentNode.isExpand) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHeight" object:nil userInfo:@{@"height":@(nodeCount * 32), @"isExpand":@"reduce"}];
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHeight" object:nil userInfo:@{@"height":@(nodeCount * 32), @"isExpand":@"add"}];            
+        }
+    }
     NSLog(@"点到了%@", currentNode.name);
     if (currentNode.isLeaf) {
         self.block(currentNode);

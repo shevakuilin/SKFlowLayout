@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray<ElementAttributes *> *dataArray;
+@property (nonatomic, assign) CGFloat lastSectionHeight;
 
 @end
 
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 初始化模拟数据
+    self.lastSectionHeight = 176;
     self.dataArray = [NSMutableArray array];
     for (NSInteger i = 0; i < 17; i++) {
         ElementAttributes *attributes = [ElementAttributes new];
@@ -75,6 +77,25 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    // 注册通知更新会议日程高度
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSectionHeight:) name:@"updateHeight" object:nil];
+}
+
+- (void)updateSectionHeight:(NSNotification *)noti {
+    NSDictionary *userInfo = noti.userInfo;
+    if (userInfo) {
+        NSString *status = userInfo[@"isExpand"];
+        NSNumber *value = userInfo[@"height"];
+        CGFloat height = [value floatValue];
+        if ([status isEqualToString:@"add"]) {
+            self.lastSectionHeight = self.lastSectionHeight + height;
+        } else {
+            self.lastSectionHeight = self.lastSectionHeight - height;
+        }
+        NSLog(@"section高度 = %.2f", self.lastSectionHeight);
+        [self.collectionView reloadData];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -155,7 +176,7 @@
     } else if (section == 4) {
         return CGSizeMake(self.view.frame.size.width, 60);
     } else if (section == 6) {
-        return CGSizeMake(self.view.frame.size.width, 176);
+        return CGSizeMake(self.view.frame.size.width, self.lastSectionHeight);
     } else {
         if (indexPath.row < 2) {
             return CGSizeMake(168.5, 75);
