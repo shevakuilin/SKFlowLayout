@@ -50,5 +50,6 @@
 #endif
 
 #import <Masonry.h>
+#import "IEThreadTool.h"
 
 #endif /* Global_pch */
