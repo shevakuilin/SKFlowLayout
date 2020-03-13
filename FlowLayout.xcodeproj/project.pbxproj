@@ -29,7 +29,6 @@
 		9F75C9F724153D9F007990BE /* MyMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F624153D9F007990BE /* MyMessageView.m */; };
 		9F75C9FA2415F0CA007990BE /* MyMultistageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C9F92415F0CA007990BE /* MyMultistageView.m */; };
 		9FD639AE240A33C600DBFAA3 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */; };
-		9FD9A6BF24163B7700AB0EA4 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9A6BE24163B7700AB0EA4 /* CategoryView.m */; };
 		9FD9A6C22417410400AB0EA4 /* NodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9A6C12417410400AB0EA4 /* NodeModel.m */; };
 		9FD9A6C52417421200AB0EA4 /* MultiLevelTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9A6C42417421200AB0EA4 /* MultiLevelTableView.m */; };
 		9FD9A6C8241744C900AB0EA4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9A6C7241744C900AB0EA4 /* CategoryCell.m */; };
@@ -84,8 +83,6 @@
 		9F75C9F92415F0CA007990BE /* MyMultistageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMultistageView.m; sourceTree = "<group>"; };
 		9FD639AC240A33C600DBFAA3 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		9FD639AD240A33C600DBFAA3 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
-		9FD9A6BD24163B7700AB0EA4 /* CategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
-		9FD9A6BE24163B7700AB0EA4 /* CategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
 		9FD9A6C02417410400AB0EA4 /* NodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeModel.h; sourceTree = "<group>"; };
 		9FD9A6C12417410400AB0EA4 /* NodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeModel.m; sourceTree = "<group>"; };
 		9FD9A6C32417421200AB0EA4 /* MultiLevelTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiLevelTableView.h; sourceTree = "<group>"; };
@@ -239,8 +236,6 @@
 		9FD9A6BC24163B2D00AB0EA4 /* MultistageView */ = {
 			isa = PBXGroup;
 			children = (
-				9FD9A6BD24163B7700AB0EA4 /* CategoryView.h */,
-				9FD9A6BE24163B7700AB0EA4 /* CategoryView.m */,
 				9FD9A6C02417410400AB0EA4 /* NodeModel.h */,
 				9FD9A6C12417410400AB0EA4 /* NodeModel.m */,
 				9FD9A6C32417421200AB0EA4 /* MultiLevelTableView.h */,
@@ -375,7 +370,6 @@
 				9F75C96324151813007990BE /* IEHomeCenterBannerView.m in Sources */,
 				9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */,
 				9F69B933240771C400BE955F /* AppDelegate.m in Sources */,
-				9FD9A6BF24163B7700AB0EA4 /* CategoryView.m in Sources */,
 				9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */,
 				9F69B944240771CA00BE955F /* main.m in Sources */,
 				9F75C954241279A9007990BE /* MyHeaderView.m in Sources */,

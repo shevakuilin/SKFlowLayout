@@ -8,7 +8,6 @@
 
 #import <Masonry.h>
 #import "NodeModel.h"
-#import "CategoryView.h"
 #import "MyMultistageView.h"
 #import "MultiLevelTableView.h"
 
@@ -67,38 +66,6 @@
     
     return [array copy];
 }
-
-//#pragma mark - UITableViewDataSource
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return _categories.count;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return 0;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1"];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"1"];
-//    }
-//    return cell;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    CategoryView *headerView = [[CategoryView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44)];
-//    headerView.categoryName = _categories[section];
-//    headerView.backgroundColor = [UIColor whiteColor];
-//
-//    return headerView;
-//}
-//
-//#pragma mark - UITableViewDataSource
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 44;
-//}
 
 - (UITableView *)tableView {
     if (!_tableView) {
