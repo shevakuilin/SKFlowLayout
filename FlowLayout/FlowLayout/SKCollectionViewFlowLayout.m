@@ -157,8 +157,8 @@
     CGRect frame = CGRectZero;
     for (NSValue *value in self.framePool) {
         frame = [value CGRectValue];
-        // 判断两个区域是否重叠
-        collision = CGRectContainsRect(frame, currentFrame);
+        // 判断两个区域是否相交
+        collision = CGRectIntersectsRect(frame, currentFrame);
         if (collision) { break; }
     }
     if (collision) {

@@ -191,17 +191,17 @@
         return CGSizeMake(self.view.frame.size.width, self.lastSectionHeight);
     } else {
         if (indexPath.row < 2) {
-            return CGSizeMake(168.5, 75);
+            return CGSizeMake(/*168.5*/(ScreenWidth - 38)/2, /*75*/((ScreenWidth - 38)/2) / 2.25);
         } else if (indexPath.row == 2) {
-            return CGSizeMake(109.5, 158);
+            return CGSizeMake(/*109.5*/(ScreenWidth - 46)/3.004, /*158*/((ScreenWidth - 46)/3.004) / 0.69);
         } else if (indexPath.row > 2 && indexPath.row < 7) {
-            return CGSizeMake(109.5, 75);
+            return CGSizeMake(/*109.5*/(ScreenWidth - 46)/3.004, /*75*/((ScreenWidth - 46)/3.004) / 1.46);
         } else if (indexPath.row == 7) {
-            return CGSizeMake(345, 75);
+            return CGSizeMake(/*345*/ScreenWidth - 30, /*75*/(ScreenWidth - 30) / 4.6);
         } else if (indexPath.row > 9 && indexPath.row < 13) {
-            return CGSizeMake(109.5, 75);
+            return CGSizeMake(/*109.5*/(ScreenWidth - 46)/3.004, /*75*/((ScreenWidth - 46)/3.004) / 1.46);
         } else {
-            return CGSizeMake(168.5, 75);
+            return CGSizeMake(/*168.5*/(ScreenWidth - 38)/2, /*75*/((ScreenWidth - 38)/2) / 2.25);
         }
     }
 }
