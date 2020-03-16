@@ -16,6 +16,7 @@
 		9F69B944240771CA00BE955F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B943240771CA00BE955F /* main.m */; };
 		9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B94F2407751A00BE955F /* ElementAttributes.m */; };
 		9F69B9532407832A00BE955F /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B9522407832A00BE955F /* ElementView.m */; };
+		9F6E21CD241F12F300D35389 /* NSString+IEHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E21CC241F12F300D35389 /* NSString+IEHandle.m */; };
 		9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */; };
 		9F75C954241279A9007990BE /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C953241279A9007990BE /* MyHeaderView.m */; };
 		9F75C957241512F4007990BE /* MySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C956241512F4007990BE /* MySearchBar.m */; };
@@ -56,6 +57,8 @@
 		9F69B94F2407751A00BE955F /* ElementAttributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementAttributes.m; sourceTree = "<group>"; };
 		9F69B9512407832A00BE955F /* ElementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElementView.h; sourceTree = "<group>"; };
 		9F69B9522407832A00BE955F /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
+		9F6E21CB241F12F300D35389 /* NSString+IEHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IEHandle.h"; sourceTree = "<group>"; };
+		9F6E21CC241F12F300D35389 /* NSString+IEHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IEHandle.m"; sourceTree = "<group>"; };
 		9F75C942240F5015007990BE /* SKCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		9F75C952241279A9007990BE /* MyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
@@ -146,7 +149,7 @@
 		9F69B930240771C400BE955F /* FlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				9F75C98924151BEB007990BE /* Category */,
+				9F6E21CA241F12E700D35389 /* Category */,
 				9F75C96624151BEA007990BE /* Tools */,
 				9F75C95824151813007990BE /* Banner */,
 				9F69B94A240774B900BE955F /* FlowLayout */,
@@ -180,6 +183,15 @@
 			path = FlowLayout;
 			sourceTree = "<group>";
 		};
+		9F6E21CA241F12E700D35389 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9F6E21CB241F12F300D35389 /* NSString+IEHandle.h */,
+				9F6E21CC241F12F300D35389 /* NSString+IEHandle.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		9F75C95824151813007990BE /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,13 +214,6 @@
 				9F75C97B24151BEA007990BE /* IEThreadTool.m */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		9F75C98924151BEB007990BE /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		9F75C9FB24163183007990BE /* SubModule */ = {
@@ -382,6 +387,7 @@
 				9FD9A6C8241744C900AB0EA4 /* CategoryCell.m in Sources */,
 				9F75C96124151813007990BE /* IEHomeBannerScrollProgressView.m in Sources */,
 				9F75C9F424152A6B007990BE /* MyBannerView.m in Sources */,
+				9F6E21CD241F12F300D35389 /* NSString+IEHandle.m in Sources */,
 				9F75C96224151813007990BE /* IEHomeBannerCollectionViewCell.m in Sources */,
 				9F75C957241512F4007990BE /* MySearchBar.m in Sources */,
 				9F75C9CC24151BEB007990BE /* IEThreadTool.m in Sources */,

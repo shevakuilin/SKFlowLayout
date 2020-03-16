@@ -51,5 +51,6 @@
 
 #import <Masonry.h>
 #import "IEThreadTool.h"
+#import "NSString+IEHandle.h"
 
 #endif /* Global_pch */

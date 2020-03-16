@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConferenceCell : UITableViewCell
 
+@property (nonatomic, copy) NSString *conference;
+
 @end
 
 NS_ASSUME_NONNULL_END

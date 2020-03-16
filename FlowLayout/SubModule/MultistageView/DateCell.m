@@ -32,6 +32,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = ColorRGB(253, 250, 254);
+        
         self.dateLabel = [UILabel new];
         self.dateLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:11];
         self.dateLabel.textColor = Color16Hex(0x424242);

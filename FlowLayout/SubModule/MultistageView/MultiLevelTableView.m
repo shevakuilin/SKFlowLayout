@@ -141,7 +141,7 @@
     } else if (node.level == 2) {
         return 32;
     }
-    return 178;
+    return 264;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -172,6 +172,7 @@
             cell = [[ConferenceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"conference"];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.conference = node.name;
         return cell;
     }
 }
@@ -193,7 +194,7 @@
     if (currentNode.level == 1) {
         nodeHeight = 32;
     } else if (currentNode.level == 2) {
-        nodeHeight = 168;
+        nodeHeight = 264;
     }
         if (currentNode.isExpand) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"updateHeight" object:nil userInfo:@{@"height":@(nodeCount * nodeHeight), @"isExpand":@"reduce"}];
