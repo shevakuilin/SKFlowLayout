@@ -10,6 +10,7 @@
 #import "MyHeaderView.h"
 #import "MyBannerView.h"
 #import "MyMessageView.h"
+#import "SKGradientView.h"
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
 #import "MyMultistageView.h"
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray<ElementAttributes *> *dataArray;
 @property (nonatomic, assign) CGFloat lastSectionHeight;
+@property (nonatomic, strong) SKGradientView *gradientView;
 
 @end
 
@@ -29,6 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置梯度渐变
+    [self.view addSubview:self.gradientView];
+    
     // 初始化模拟数据
     self.lastSectionHeight = 176;
     self.dataArray = [NSMutableArray array];
@@ -221,6 +226,13 @@
 //    }
 //}
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    self.gradientView.frame = CGRectMake(self.gradientView.frame.origin.x, self.gradientView.frame.origin.x - offsetY, self.gradientView.frame.size.width, self.gradientView.frame.size.height);
+}
+
 #pragma mark - 懒加载
 
 - (UICollectionView *)collectionView {
@@ -235,7 +247,7 @@
         _collectionView.collectionViewLayout = layout;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = [UIColor clearColor];
         [_collectionView registerClass:[MySearchBar class] forCellWithReuseIdentifier:@"0"];
         [_collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"1"];
         [_collectionView registerClass:[MyBannerView class] forCellWithReuseIdentifier:@"2"];
@@ -244,6 +256,13 @@
         [_collectionView registerClass:[MyHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     }
     return _collectionView;
+}
+
+- (SKGradientView *)gradientView {
+    if (!_gradientView) {
+        _gradientView = [[SKGradientView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 265)];
+    }
+    return _gradientView;
 }
 
 @end

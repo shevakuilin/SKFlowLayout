@@ -17,6 +17,7 @@
 		9F69B9502407751A00BE955F /* ElementAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B94F2407751A00BE955F /* ElementAttributes.m */; };
 		9F69B9532407832A00BE955F /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B9522407832A00BE955F /* ElementView.m */; };
 		9F6E21CD241F12F300D35389 /* NSString+IEHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E21CC241F12F300D35389 /* NSString+IEHandle.m */; };
+		9F6E21D6241F49C500D35389 /* SKGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E21D5241F49C500D35389 /* SKGradientView.m */; };
 		9F75C944240F5015007990BE /* SKCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */; };
 		9F75C954241279A9007990BE /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C953241279A9007990BE /* MyHeaderView.m */; };
 		9F75C957241512F4007990BE /* MySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F75C956241512F4007990BE /* MySearchBar.m */; };
@@ -59,6 +60,8 @@
 		9F69B9522407832A00BE955F /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
 		9F6E21CB241F12F300D35389 /* NSString+IEHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IEHandle.h"; sourceTree = "<group>"; };
 		9F6E21CC241F12F300D35389 /* NSString+IEHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IEHandle.m"; sourceTree = "<group>"; };
+		9F6E21D4241F49C500D35389 /* SKGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKGradientView.h; sourceTree = "<group>"; };
+		9F6E21D5241F49C500D35389 /* SKGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKGradientView.m; sourceTree = "<group>"; };
 		9F75C942240F5015007990BE /* SKCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9F75C943240F5015007990BE /* SKCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		9F75C952241279A9007990BE /* MyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				9F69B935240771C400BE955F /* SceneDelegate.m */,
 				9F69B937240771C400BE955F /* ViewController.h */,
 				9F69B938240771C400BE955F /* ViewController.m */,
+				9F6E21D4241F49C500D35389 /* SKGradientView.h */,
+				9F6E21D5241F49C500D35389 /* SKGradientView.m */,
 				9F69B93A240771C400BE955F /* Main.storyboard */,
 				9F69B93D240771CA00BE955F /* Assets.xcassets */,
 				9F69B93F240771CA00BE955F /* LaunchScreen.storyboard */,
@@ -384,6 +389,7 @@
 				9F75C9F124151C74007990BE /* IEBanner.m in Sources */,
 				9F69B9532407832A00BE955F /* ElementView.m in Sources */,
 				9FD9A6C22417410400AB0EA4 /* NodeModel.m in Sources */,
+				9F6E21D6241F49C500D35389 /* SKGradientView.m in Sources */,
 				9FD9A6C8241744C900AB0EA4 /* CategoryCell.m in Sources */,
 				9F75C96124151813007990BE /* IEHomeBannerScrollProgressView.m in Sources */,
 				9F75C9F424152A6B007990BE /* MyBannerView.m in Sources */,
